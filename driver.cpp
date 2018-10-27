@@ -40,6 +40,9 @@ int main(){
 	cout << "Adaptive: ";
 	print_vec(insertion_a(vec, 0, vec.size() - 1));
 
+	cout << "Merge sort: \n";
+	print_vec(merge_call(vec, 0, vec.size() - 1));
+
 	return 0;
 }
 
