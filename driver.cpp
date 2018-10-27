@@ -4,6 +4,7 @@
 #include "selection_sort.h"
 #include "merge_sort.h"
 #include "quick_sort.h"
+#include "binary_search.h"
 #include  <vector>
 #include  <iostream>
 using namespace std;
@@ -45,6 +46,10 @@ int main(){
 
 	cout << "Quick sort: \n";
 	print_vec(quick_call(vec, 0, vec.size() - 1));
+
+	cout << "Binary search: \n";
+	cout << "Location of '5': " << 
+		binary_search(vec, 5, 0, vec.size() - 1) << "\n";
 
 	return 0;
 }
