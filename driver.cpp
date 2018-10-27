@@ -5,6 +5,7 @@
 #include "merge_sort.h"
 #include "quick_sort.h"
 #include "binary_search.h"
+#include "bucket_sort.h"
 #include  <vector>
 #include  <iostream>
 using namespace std;
@@ -19,10 +20,18 @@ int main(){
 	int array_size = 7;
 	fill_vec(array, array_size, vec);
 
+	vector<int> vec2;
+	int array2[] = {2, 3, 5, 2, 5, 3, 3, 3, 5, 2};
+	int array_size2 = 10;
+	fill_vec(array2, array_size2, vec2);
+
 	// Test sorts
 	cout << "Initial array:\n";
+	cout << "Vector 1: ";
 	print_vec(vec);
-	
+	cout << "Vector 2: ";
+	print_vec(vec2);
+
 	cout << "Bubble sort: \n";
 	cout << "Non-adaptive: ";
 	print_vec(bubble_na(vec, 0, vec.size() - 1));
@@ -47,9 +56,14 @@ int main(){
 	cout << "Quick sort: \n";
 	print_vec(quick_call(vec, 0, vec.size() - 1));
 
+	cout << "Bucket sort (Vector 2): \n";
+	print_vec(bucket_sort(vec2));
+
 	cout << "Binary search: \n";
 	cout << "Location of '5': " << 
 		binary_search(vec, 5, 0, vec.size() - 1) << "\n";
+	cout << "Location of '1': " << 
+		binary_search(vec, 1, 0, vec.size() - 1) << "\n";
 
 	return 0;
 }
